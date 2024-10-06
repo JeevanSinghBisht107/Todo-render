@@ -12,7 +12,7 @@ const Createtodo = ({ id,todos, setTodos ,setId}) => {
     e.preventDefault();
       const token = localStorage.getItem("token");
       axios
-      .post(`http://localhost:${PORT}/todo/add`, { description: todos.description },{
+      .post(`https://todo-render-backend.onrender.com/todo/add`, { description: todos.description },{
         headers:{
           Authorization:`Bearer ${token}`
         }
@@ -31,7 +31,7 @@ const Createtodo = ({ id,todos, setTodos ,setId}) => {
       e.preventDefault();
       const token = localStorage.getItem("token");
       let todoid = sessionStorage.getItem("id")
-      axios.put(`http://localhost:${PORT}/todo/update/${todoid}`,{ description:todos.description },{
+      axios.put(`https://todo-render-backend.onrender.com/todo/update/${todoid}`,{ description:todos.description },{
         headers:{
           Authorization:`Bearer ${token}`
         }

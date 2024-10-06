@@ -27,7 +27,7 @@ const Signup = () => {
   async function handleSubbmit(e){
     e.preventDefault();
     try{
-        await axios.post(`http://localhost:${PORT}/auth/add`,formDetails)
+        await axios.post(`https://todo-render-backend.onrender.com/auth/add`,formDetails)
         toast.success('User Registered');
         navigate('/login')
         setFormDetails({

@@ -23,7 +23,7 @@ const Todowrapper = () => {
     const fetchTodos = async () => {
       try {
         const token = localStorage.getItem("token");
-        const response = await axios.get(`http://localhost:${PORT}/todo/all`,{
+        const response = await axios.get(`https://todo-render-backend.onrender.com/todo/all`,{
           headers:{
             Authorization: `Bearer ${token}`
           }
@@ -46,7 +46,7 @@ const Todowrapper = () => {
 
   function deleteTodo(id) {
     const token = localStorage.getItem("token");
-    axios.delete(`http://localhost:${PORT}/todo/delete/${id}`,{
+    axios.delete(`https://todo-render-backend.onrender.com/todo/delete/${id}`,{
       headers:{
         Authorization:`Bearer ${token}`
       }
