@@ -36,7 +36,14 @@ const Signup = () => {
           password: ""
         })
       }catch(error){
-       toast.error(error.response.data.message)
+      // Check if error.response and error.response.data exist
+      if (error.response && error.response.data) {
+        // Access and display the specific error message
+        toast.error(error.response.data.message)
+    } else {
+        // Handle generic error (e.g., network error or other issues)
+        toast.error(error.message)
+    }
       }
   }
 
